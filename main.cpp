@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "All structures.h"
+#include "all_structures.h"
 using namespace std;
 
 user users[10];
