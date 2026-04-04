@@ -20,7 +20,7 @@ struct transaction{
 
 };
 struct user {
-    double id;
+    int id;
     string username;
     string password;
     string email;
