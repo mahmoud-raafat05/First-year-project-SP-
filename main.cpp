@@ -23,7 +23,14 @@ int main(){
 	cout << "please choose from the following options: " << endl;
 	cout << "1- login" << endl;
 	cout << "2- signup" << endl;
-	cin >> choices;
+    cin >> choices;
+
+    switch (choices) {
+        case 1:
+            login();
+            break;
+       
+    
 
     return 0; 
 }
