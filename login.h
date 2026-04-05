@@ -9,13 +9,19 @@ void login() {
 	cout << "please enter your password: ";
 
 	cin >> password;
+	
+	bool found = false; // to check if user is found
 
 	for (int i = 0; i < 10; i++) {
-		if (users[i].username == username && users[i].password == password) {
-			cout << "login successful!" << endl;
-			 
-		}
 		
+		if (users[i].username == username && users[i].password == password) {
+			found = true;
+			cout << "Login successful! Welcome, " << users[i].name << "." << endl;
 
+			break;
+		}
+		if(!found)
+			cout << "Invalid username or password. Please try again." << endl;
+		
+	
 	}
-}
