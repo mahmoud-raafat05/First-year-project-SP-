@@ -19,7 +19,7 @@ struct transaction{
     double amount;
 
 };
-struct user {
+struct User {
     int id;
     string username;
     string password;
