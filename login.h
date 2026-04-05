@@ -7,6 +7,7 @@ void login() {
 	cout << "please enter your username: ";
 	getline(cin, username); // to read the username with spaces
 	cout << "please enter your password: ";
+
 	cin >> password;
 
 	for (int i = 0; i < 10; i++) {
@@ -14,5 +15,7 @@ void login() {
 			cout << "login successful!" << endl;
 			 
 		}
+		
+
 	}
 }
