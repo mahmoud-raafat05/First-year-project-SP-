@@ -17,6 +17,13 @@ user users[10] = {
 
 
 int main(){
-   
-    return 0;
+    int choices;
+	cout << "                              Welcome to our program            " << endl;
+	cout << "                         ----------------------------------      " << endl;
+	cout << "please choose from the following options: " << endl;
+	cout << "1- login" << endl;
+	cout << "2- signup" << endl;
+	cin >> choices;
+
+    return 0; 
 }
