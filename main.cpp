@@ -30,7 +30,7 @@ int main()
     switch (choices)
     {
     case 1:
-        login(users, 10);
+        login(users);
         break;
     }
     return 0;
