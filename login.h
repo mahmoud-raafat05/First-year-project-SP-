@@ -1,10 +1,11 @@
+
 #pragma once
 #include <iostream>
 using namespace std;
 #include <string>
 #include "all_structures.h"
 
-void login(User users[])
+int login(User users[]) //int mkan void
 {
 	string username, password;
 	bool found = false; // to check if user is found
@@ -29,7 +30,7 @@ void login(User users[])
 				found = true;
 				cout << "Login successful! Welcome, " << users[i].username << "." << endl;
 
-				break;
+				return i;
 			}
 		}
 		if (!found)
@@ -46,4 +47,5 @@ void login(User users[])
 	{
 		cout << "You have reached the maximum number of attempts." << endl;
 	}
+	return -1;
 }
