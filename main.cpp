@@ -16,7 +16,11 @@ User users[10] = {
         2, "mahmoud", "mahmoud@pass", "mahmoud@gmail.com", "new nozha", "01114563879", // user's info
         {{"12224", "mahmoud medhat", "320", "07/26", "bank masr", 405060.33}},         // account info
         {{"mahmoud", "hana", 10000}}                                                   // transactions
-    } }; int main()
+    } 
+}; 
+
+
+     int main()
     {
         int choices;
         cout << "                              Welcome to our program            " << endl;
