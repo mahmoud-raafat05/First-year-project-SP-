@@ -15,7 +15,7 @@ void AddNewAccount(User users[], int usercount) {
    
         if (users[usercount].id == id) {
             for (int j = 0; j < 3; j++) {
-                if (users[usercount].accounts[j].card_number == "") {
+                if (users[usercount].accounts[j].card_number.empty()) {
                     
                     cout << "Enter Card Number :" << endl;
                     cin >> users[usercount].accounts[j].card_number;
