@@ -12,34 +12,34 @@ void AddNewAccount(User users[], int usercount) {
     cout << "Enter your id :" << endl;
     cin >> id;
 
-    for (int i = 0; i < usercount; i++) {
-        if (users[i].id == id) {
+   
+        if (users[usercount].id == id) {
             for (int j = 0; j < 3; j++) {
-                if (users[i].accounts[j].card_number == "") {
+                if (users[usercount].accounts[j].card_number == "") {
                     
                     cout << "Enter Card Number :" << endl;
-                    cin >> users[i].accounts[j].card_number;
+                    cin >> users[usercount].accounts[j].card_number;
 
                     cin.ignore();
                     cout << "Enter Holder Name :\n";
-                    getline(cin, users[i].accounts[j].holder_name);
+                    getline(cin, users[usercount].accounts[j].holder_name);
 
                     cout << "Enter Cvv_code :\n";
-                    cin >> users[i].accounts[j].cvv_code;
+                    cin >> users[usercount].accounts[j].cvv_code;
 
                     cout << "Enter Expiration Date :\n";
-                    cin >> users[i].accounts[j].expiration_date;
+                    cin >> users[usercount].accounts[j].expiration_date;
 
                     cin.ignore();
                     cout << "Enter Bank Name :\n";
-                    getline(cin, users[i].accounts[j].bank_name);
+                    getline(cin, users[usercount].accounts[j].bank_name);
 
-                    users[i].accounts[j].balance = 1000 + rand() % 3000;
+                    users[usercount].accounts[j].balance = 1000 + rand() % 3000;
 
                     cout << "Account added successfully\n";
                     return; 
                 }
-            }
+            
             
             cout << "Sorry, you already have the maximum limit of 3 accounts\n";
             return;

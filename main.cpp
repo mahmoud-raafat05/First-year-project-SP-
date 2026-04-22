@@ -3,8 +3,12 @@
 #include "all_structures.h"
 #include "login.h"
 #include "transfer.h"
+#include "in_login.h"
+#include "sign_up.h"
+// #include "check_balance.h"
 #include <fstream>
 using namespace std;
+
 
 User users[10] = {
     {
@@ -16,31 +20,37 @@ User users[10] = {
         2, "mahmoud", "mahmoud@pass", "mahmoud@gmail.com", "new nozha", "01114563879", // user's info
         {{"12224", "mahmoud medhat", "320", "07/26", "bank masr", 405060.33}},         // account info
         {{"mahmoud", "hana", 10000}}                                                   // transactions
-    } 
-}; 
-
-
-     int main()
+    }};
+    
+    int userIdx;
+    int usercount = 2;
+    
+    int main()
     {
-        int choices;
-        cout << "                              Welcome to our program            " << endl;
-        cout << "                         ----------------------------------      " << endl;
-        cout << "please choose from the following options: " << endl;
-        cout << "1- login" << endl;
-        cout << "2- signup" << endl;
-        cin >> choices;
+    srand(time(0)); 
+    int choices;
+    cout << "                              Welcome to our program            " << endl;
+    cout << "                         ----------------------------------      " << endl;
+    cout << "please choose from the following options: " << endl;
+    cout << "1- login" << endl;
+    cout << "2- signup" << endl;
+    cin >> choices;
 
-        switch (choices)
-        {
-        case 1:
-        {
-            int userIdx = login(users);
-            if (userIdx != -1)
-            {
-                transfer(userIdx);
-            }
-            break;
-        }
-        }
-        return 0;
+     switch(choices)
+    {
+    case 1:
+    {
+        userIdx = login(users);
+        main_menu(users, userIdx);
+        break;
     }
+    case 2:
+    {
+        signup(users, usercount);
+        cout<<users[usercount-1].accounts[0].balance;
+        main_menu(users, usercount - 1);
+        break;
+    }
+    }
+    return 0;
+}

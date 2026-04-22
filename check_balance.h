@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "all_structures.h"
 using namespace std;
 
 void checkBalance(User& users) {
@@ -41,8 +42,3 @@ void checkBalance(User& users) {
 
     } while (again == 'y' || again == 'Y');
 }
-
-
-
-
-    
