@@ -4,7 +4,7 @@
 using namespace std;
 #include "all_structures.h"
 
-void checkTransactions(user u) {
+void checkTransactions(User u) {
     cout << endl << "Transactions for " << u.username << ":" << endl;
     bool hasTransactions = false;
     double sentTotal = 0;
