@@ -36,7 +36,7 @@ User users[10] = {
     cout << "2- signup" << endl;
     cin >> choices;
 
-    switch (choices)
+     switch(choices)
     {
     case 1:
     {
