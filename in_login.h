@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "all_structures.h"
-// #include "check_balance.h"
+#include "check_balance.h"
 #include "check_transactions.h"
 #include "add_new_account.h"
 #include "transfer.h"
@@ -20,7 +20,7 @@ void main_menu(User users[],int userIdx){
     {
         case 1: 
         {
-            // checkBalance(users,userIdx);
+            checkbalance(users,userIdx);
             break;
         }
         case 2:

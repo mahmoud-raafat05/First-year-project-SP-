@@ -5,7 +5,7 @@
 #include "transfer.h"
 #include "in_login.h"
 #include "sign_up.h"
-// #include "check_balance.h"
+#include "check_balance.h"
 #include <fstream>
 using namespace std;
 
@@ -51,17 +51,17 @@ User users[10] = {
         break;
    }
    
-    //  switch(choices)
-    // {
-    // case 1:
-    // {
-    //     break;
-    // }
-    // case 2:
-    // {
-    //     main_menu(users, usercount - 1);
-    //     break;
-    // }
-    // }
+     switch(choices)
+     {
+     case 1:
+     {
+         break;
+     }
+     case 2:
+     {
+         main_menu(users, usercount - 1);
+         break;
+     }
+     }
     return 0;
 }
