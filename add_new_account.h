@@ -41,9 +41,9 @@ void AddNewAccount(User users[], int usercount) {
                 }
             
             
+            }
             cout << "Sorry, you already have the maximum limit of 3 accounts\n";
             return;
-        }
     }
     
     cout << "Error: User ID not found!\n";
