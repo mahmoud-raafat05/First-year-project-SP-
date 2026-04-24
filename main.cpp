@@ -5,7 +5,7 @@
 #include "transfer.h"
 #include "in_login.h"
 #include "sign_up.h"
-// #include "check_balance.h"
+#include "check_balance.h"
 #include <fstream>
 using namespace std;
 
