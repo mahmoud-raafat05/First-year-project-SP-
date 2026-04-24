@@ -8,7 +8,7 @@
 using namespace std;
 
 void main_menu(User users[],int userIdx){
-    cout<<"-----welcome to the Main Menu----- \n";
+    cout<<"\n \n-----welcome to the Main Menu----- \n";
     cout<<"1-Check balance \n";
     cout<<"2-Check transactions \n";
     cout<<"3-Add new account \n";
@@ -25,7 +25,7 @@ void main_menu(User users[],int userIdx){
         }
         case 2:
         {
-            // checkTransactions(users,userIdx);
+            checkTransactions(users,userIdx);
             break;
         }
         case 3: 
