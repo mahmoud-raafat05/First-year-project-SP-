@@ -35,22 +35,33 @@ User users[10] = {
     cout << "1- login" << endl;
     cout << "2- signup" << endl;
     cin >> choices;
+    
+    if(choices==1)
+    userIdx = login(users);
+    if(choices==2)
+    signup(users, usercount);
+    if(choices>2||choices<1)
+    cout<<"invalid option \n";
 
-     switch(choices)
-    {
-    case 1:
-    {
-        userIdx = login(users);
-        main_menu(users, userIdx);
+   while(true)
+   { main_menu(users, userIdx);
+   char cont; cout<<"\n Do you want to continue? (y/n) \n";
+   cin>>cont;
+    if(cont=='n')
         break;
-    }
-    case 2:
-    {
-        signup(users, usercount);
-        cout<<users[usercount-1].accounts[0].balance;
-        main_menu(users, usercount - 1);
-        break;
-    }
-    }
+   }
+   
+    //  switch(choices)
+    // {
+    // case 1:
+    // {
+    //     break;
+    // }
+    // case 2:
+    // {
+    //     main_menu(users, usercount - 1);
+    //     break;
+    // }
+    // }
     return 0;
 }
