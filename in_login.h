@@ -28,12 +28,9 @@ void main_menu(User users[], int userIdx)
             cout << "------Thanks for using our app------ /n";
             break;
         }
-
-        switch (main_choice)
-        {
-        case 1:
-        {
-            checkbalance(users, userIdx);
+      switch(main_choice){
+          case 1:{
+            checkbalance(users,userIdx);
             break;
         }
         case 2:
