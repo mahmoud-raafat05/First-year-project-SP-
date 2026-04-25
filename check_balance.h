@@ -28,9 +28,15 @@ void checkBalance(User& users) {
 
         if (index >= 0 && index < 3 && !User.accounts[index].bankName.empty()) {
             cout << "------------------------------------------" << endl;
+<<<<<<< Updated upstream
             cout << "Account Holder:  " << User.accounts[index].holderName << endl;
             cout << "Bank:            " << User.accounts[index].bankName << endl;
             cout << "Current Balance: " << User.accounts[index].balance << " EGP" << endl;
+=======
+            cout << "Account Holder:  " << users[userIdx].accounts[index].holder_name << endl;
+            cout << "Bank:            " << users[userIdx].accounts[index].bank_name << endl;
+            cout << "Current Balance: " << double(users[userIdx].accounts[index].balance) << " EGP" << endl;
+>>>>>>> Stashed changes
             cout << "------------------------------------------" << endl;
         }
         else {
