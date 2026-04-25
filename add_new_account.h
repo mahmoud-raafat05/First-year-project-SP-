@@ -34,7 +34,7 @@ void AddNewAccount(User users[], int usercount) {
                     cout << "Enter Bank Name :\n";
                     getline(cin, users[usercount].accounts[j].bank_name);
 
-                    users[usercount].accounts[j].balance = 1000 + rand() % 3000;
+                    users[usercount].accounts[j].balance = 1000.0 + rand() % 3000;
 
                     cout << "Account added successfully\n";
                     return; 

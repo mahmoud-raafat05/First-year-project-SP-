@@ -38,13 +38,13 @@ void signup(User users[],int& usercount) {
 
 	users[usercount].username = new_user;
 
-	cout << "Create Password";
+	cout << "Create Password:";
 	cin >> users[usercount].password;
 
-	cout << "Enter Email Address";
+	cout << "Enter Email Address:";
 	cin >> users[usercount].email;
 
-	cout << "Enter Phone Number";
+	cout << "Enter Phone Number:";
 	cin >> users[usercount].phone;
 
 	cout << "/n ---Bank Card Details---" << endl;
@@ -63,9 +63,10 @@ void signup(User users[],int& usercount) {
 	cin >> users[usercount].accounts[0].expiration_date;
 
 	cout << "5- Bank Name:";
-	cin >> users[usercount].accounts[0].bank_name;
+	cin.ignore();
+	getline(cin, users[usercount].accounts[0].bank_name);
 
-	users[usercount].accounts[0].balance = (rand() % 3000) + 1000 ;
+	users[usercount].accounts[0].balance = (rand() % 3000) + 1046.579 ;
 
 	users[usercount].id = usercount + 1;
 
