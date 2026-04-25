@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "all_structures.h"
-// #include "check_balance.h"
+#include "check_balance.h"
 #include "check_transactions.h"
 #include "add_new_account.h"
 #include "transfer.h"
@@ -25,9 +25,6 @@ void main_menu(User users[], int userIdx)
 
         if (main_choice == 5)
         {
-<<<<<<< Updated upstream
-            // checkBalance(users,userIdx);
-=======
             cout << "------Thanks for using our app------ /n";
             break;
         }
@@ -37,7 +34,6 @@ void main_menu(User users[], int userIdx)
         case 1:
         {
             checkbalance(users, userIdx);
->>>>>>> Stashed changes
             break;
         }
         case 2:
@@ -61,7 +57,7 @@ void main_menu(User users[], int userIdx)
         }
 
         char cont;
-        cout << "\n Do you want to continue? (y/n) \n";
+        cout << "\n Do you want to continue using the app ? (y/n) \n";
         cin >> cont;
         if (cont == 'n')
         {

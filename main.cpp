@@ -5,7 +5,7 @@
 #include "transfer.h"
 #include "in_login.h"
 #include "sign_up.h"
-// #include "check_balance.h"
+#include "check_balance.h"
 #include <fstream>
 using namespace std;
 
@@ -35,29 +35,6 @@ int main()
     cout << "2- signup" << endl;
     cin >> choices;
 
-<<<<<<< Updated upstream
-   while(true)
-   { main_menu(users, userIdx);
-   char cont; cout<<"\n Do you want to continue? (y/n) \n";
-   cin>>cont;
-    if(cont=='n')
-        break;
-   }
-   
-    //  switch(choices)
-    // {
-    // case 1:
-    // {
-    //     break;
-    // }
-    // case 2:
-    // {
-    //     main_menu(users, usercount - 1);
-    //     break;
-    // }
-    // }
-    return 0;
-=======
     if (choices == 1)
         userIdx = login(users);
     if (choices == 2)
@@ -67,17 +44,11 @@ int main()
     }
     if (choices > 2 || choices < 1)
         cout << "invalid option \n";
-
-    // while (true)
-    // {
+    
+        //----------------------------
         main_menu(users, userIdx);
-    //     char cont;
-    //     cout << "\n Do you want to continue? (y/n) \n";
-    //     cin >> cont;
-    //     if (cont == 'n')
-    //         break;
-    // }
+        //----------------------------
+    
 
        return 0;
->>>>>>> Stashed changes
 }
