@@ -5,10 +5,9 @@
 #include "transfer.h"
 #include "in_login.h"
 #include "sign_up.h"
-// #include "check_balance.h"
+#include "check_balance.h"
 #include <fstream>
 using namespace std;
-
 
 User users[10] = {
     {
@@ -21,47 +20,39 @@ User users[10] = {
         {{"12224", "mahmoud medhat", "320", "07/26", "bank masr", 405060.33}},         // account info
         {{"mahmoud", "hana", 10000}}                                                   // transactions
     }};
-    
-    int userIdx;
-    int usercount = 2;
-    
-    int main()
-    {
-    srand(time(0)); 
+
+int userIdx;
+int usercount = 2;
+
+int main()
+{
+    srand(time(0));
     int choices;
+    userIdx= -1;
     cout << "                              Welcome to our program            " << endl;
     cout << "                         ----------------------------------      " << endl;
     cout << "please choose from the following options: " << endl;
-    cout << "1- login" << endl;
-    cout << "2- signup" << endl;
+    cout << "1- login\n";
+    cout << "2- signup\n";
     cin >> choices;
-    
-    if(choices==1)
-    userIdx = login(users);
-    if(choices==2)
-    signup(users, usercount);
-    if(choices>2||choices<1)
-    cout<<"invalid option \n";
 
-   while(true)
-   { main_menu(users, userIdx);
-   char cont; cout<<"\n Do you want to continue? (y/n) \n";
-   cin>>cont;
-    if(cont=='n')
-        break;
-   }
-   
-    //  switch(choices)
-    // {
-    // case 1:
-    // {
-    //     break;
-    // }
-    // case 2:
-    // {
-    //     main_menu(users, usercount - 1);
-    //     break;
-    // }
-    // }
+    if (choices == 1) {
+        userIdx = login(users);
+    } 
+    else if (choices == 2) {
+        if (signup(users, usercount) != -1) {
+            userIdx = usercount - 1;
+        }
+    }
+    else {
+        cout << "invalid option\n";
+    }
+
+    // --------------------------------------------
+    if (userIdx != -1) {
+        main_menu(users, userIdx);
+    }
+    // --------------------------------------------
+
     return 0;
 }

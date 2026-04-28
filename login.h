@@ -1,4 +1,3 @@
-
 #pragma once
 #include <iostream>
 using namespace std;
@@ -28,7 +27,7 @@ int login(User users[]) //int mkan void
 			if (users[i].username == username && users[i].password == password)
 			{
 				found = true;
-				cout << "Login successful! Welcome, " << users[i].username << "." << endl;
+				cout << "----- Login successful! Welcome, " << users[i].username << ". ------" << endl;
 
 				return i;
 			}
