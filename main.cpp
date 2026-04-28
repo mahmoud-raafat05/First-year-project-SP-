@@ -28,27 +28,31 @@ int main()
 {
     srand(time(0));
     int choices;
+    userIdx= -1;
     cout << "                              Welcome to our program            " << endl;
     cout << "                         ----------------------------------      " << endl;
     cout << "please choose from the following options: " << endl;
-    cout << "1- login" << endl;
-    cout << "2- signup" << endl;
+    cout << "1- login\n";
+    cout << "2- signup\n";
     cin >> choices;
 
-    if (choices == 1)
+    if (choices == 1) {
         userIdx = login(users);
-    if (choices == 2)
-    {
-        signup(users, usercount);
-        userIdx = usercount - 1;
+    } 
+    else if (choices == 2) {
+        if (signup(users, usercount) != -1) {
+            userIdx = usercount - 1;
+        }
     }
-    if (choices > 2 || choices < 1)
-        cout << "invalid option \n";
-    
-        //----------------------------
-        main_menu(users, userIdx);
-        //----------------------------
-    
+    else {
+        cout << "invalid option\n";
+    }
 
-       return 0;
+    // --------------------------------------------
+    if (userIdx != -1) {
+        main_menu(users, userIdx);
+    }
+    // --------------------------------------------
+
+    return 0;
 }

@@ -48,6 +48,3 @@ void AddNewAccount(User users[], int usercount) {
     
     cout << "Error: User ID not found!\n";
 }
-
-
-    
