@@ -3,7 +3,9 @@
 #include<string>
 #include<cstdlib>
 #include <ctime>
+#include <limits>
 #include "all_structures.h"
+#include "add_new_account.h"
 using namespace std;
 
 int signup(User users[],int& usercount) {
@@ -13,30 +15,38 @@ int signup(User users[],int& usercount) {
 		return -1;
 	}
 	
-	while(true) {
 		string new_user;
 		bool exists = false;
+		int existingIndex = -1;
 		cout << "\n=================================" << endl;
 		cout << "          InstaPay Sign Up         " << endl;
 		cout << "\n=================================" << endl;
 
-		cin.ignore();
-
 		cout << "Creat Username:";
-		getline(cin, new_user);
+		getline(cin >> ws, new_user);
+		if (new_user.empty()) {
+			cout << "[!] Username cannot be empty.\n";
+			return -1;
+		}
 
 		// Check if username already exists
 		for (int i = 0; i < usercount; i++) {
 			if (users[i].username == new_user) {
 				exists = true;
+				existingIndex = i;
 				break;
 			}
 		}
 		
 		
 		if (exists) {
-			cout << "[!] This username is already taken. Please try another one\n" << endl;
-			continue;  
+			cout << "\n[!] This username already exists.\n";
+			cout << "User details:\n";
+			cout << "ID: " << users[existingIndex].id << endl;
+			cout << "Username: " << users[existingIndex].username << endl;
+			cout << "Email: " << users[existingIndex].email << endl;
+			cout << "Phone: " << users[existingIndex].phone << endl;
+			return -1;
 		}
 
 		
@@ -44,41 +54,28 @@ int signup(User users[],int& usercount) {
 
 		cout << "Create Password:";
 		cin >> users[usercount].password;
+		if (users[usercount].password.length() < 4) {
+			cout << "[!] Password must be at least 4 characters.\n";
+			return -1;
+		}
 
 		cout << "Enter Email Address:";
 		cin >> users[usercount].email;
+		if (users[usercount].email.find('@') == string::npos) {
+			cout << "[!] Invalid email. It must contain @\n";
+			return -1;
+		}
 
 		cout << "Enter Phone Number:";
 		cin >> users[usercount].phone;
+		if (users[usercount].phone.length() < 10) {
+			cout << "[!] Invalid phone number.\n";
+			return -1;
+		}
 
-		cout << "\n ---Bank Card Details---" << endl;
-
-		cout << "1- Card Number:";
-		cin >> users[usercount].accounts[0].card_number;
-
-		cout << "2- Card Holder Name:";
-		cin.ignore();
-		getline(cin, users[usercount].accounts[0].holder_name);
-
-		cout << "3- CVV Code:";
-		cin >> users[usercount].accounts[0].cvv_code;
-
-		cout << "4- Expiration Date (MM/YY):";
-		cin >> users[usercount].accounts[0].expiration_date;
-
-		cout << "5- Bank Name:";
-		cin.ignore();
-		getline(cin, users[usercount].accounts[0].bank_name);
-
-		users[usercount].accounts[0].balance = (rand() % 3000) + 1046.579;
-
+		
 		users[usercount].id = usercount + 1;
-
-		cout << "\n Account created succefully" << endl;
-		cout << "Your  ID is :" << users[usercount].id << endl;
-
-		cout << "===========================================" << endl;
+		AddNewAccount(users, usercount);
 		usercount++;
 		return 1;  
-	}
 }
