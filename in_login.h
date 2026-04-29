@@ -64,7 +64,7 @@ void main_menu(User users[], int userIdx)
         if (cont == 'n'||cont == 'N')
         {
             cout << "------Thanks for using our app------ /n";
-            break;
+            exit(1);
         }
     }
 }
