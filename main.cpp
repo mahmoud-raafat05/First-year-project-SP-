@@ -26,33 +26,46 @@ int usercount = 2;
 
 int main()
 {
+   while(true){
     srand(time(0));
     int choices;
-    userIdx= -1;
+    userIdx = -1;
     cout << "                              Welcome to our program            " << endl;
     cout << "                         ----------------------------------      " << endl;
-    cout << "please choose from the following options: " << endl;
+    cout << "please choose from the following options:(1 or 2) " << endl;
     cout << "1- login\n";
     cout << "2- signup\n";
+    cout << "3- exit\n";
+    cout << "your choice:";
     cin >> choices;
 
-    if (choices == 1) {
+    if (choices == 1)
+    {
         userIdx = login(users);
-    } 
-    else if (choices == 2) {
-        if (signup(users, usercount) != -1) {
+    }
+    else if (choices == 2)
+    {
+        if (signup(users, usercount) != -1)
+        {
             userIdx = usercount - 1;
         }
     }
-    else {
+    else if (choices == 3)
+    {
+        cout << "------Thanks for using our app------ /n";
+        return 0;
+    }
+    else
+    {
         cout << "invalid option\n";
     }
 
     // --------------------------------------------
-    if (userIdx != -1) {
+    if (userIdx != -1)
+    {
         main_menu(users, userIdx);
     }
     // --------------------------------------------
-
+}
     return 0;
 }
