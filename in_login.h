@@ -28,11 +28,11 @@ void main_menu(User users[], int userIdx)
         if (main_choice == 6)
         {
             cout << "------Thanks for using our app------ /n";
-            break;
+            exit(1);
         }
         else if(main_choice==5)
         break;
-        
+
       switch(main_choice){
           case 1:{
             checkbalance(users,userIdx);
