@@ -52,7 +52,7 @@ int main()
     }
     else if (choices == 3)
     {
-        cout << "------Thanks for using our app------ /n";
+        cout << "------Thanks for using our app------";
         return 0;
     }
     else
