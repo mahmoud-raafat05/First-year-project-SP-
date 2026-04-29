@@ -13,21 +13,26 @@ void main_menu(User users[], int userIdx)
 
     while (true)
     {
-        cout << "\n \n-----welcome to the Main Menu----- \n";
+        cout << "\n\n-----welcome to the Main Menu----- \n";
         cout << "1-Check balance \n";
         cout << "2-Check transactions \n";
         cout << "3-Add new account \n";
         cout << "4-Transfer money \n";
-        cout << "5-Exit \n";
+        cout << "5-logout \n";
+        cout << "6-Exit \n";
 
         int main_choice;
+        cout<<"your choice:";
         cin >> main_choice;
 
-        if (main_choice == 5)
+        if (main_choice == 6)
         {
             cout << "------Thanks for using our app------ /n";
             break;
         }
+        else if(main_choice==5)
+        break;
+        
       switch(main_choice){
           case 1:{
             checkbalance(users,userIdx);
@@ -54,9 +59,9 @@ void main_menu(User users[], int userIdx)
         }
 
         char cont;
-        cout << "\n Do you want to continue using the app ? (y/n) \n";
+        cout << "\nDo you want to continue using the app ? (y/n) \n";
         cin >> cont;
-        if (cont == 'n')
+        if (cont == 'n'||cont == 'N')
         {
             cout << "------Thanks for using our app------ /n";
             break;
