@@ -3,22 +3,21 @@
 #include <string>
 using namespace std;
 
-struct account{
+struct account {
     string card_number;
     string holder_name;
     string cvv_code;
     string expiration_date;
     string bank_name;
     double balance;
-
 };
 
-struct transaction{
+struct transaction {
     string from;
     string to;
     double amount;
-
 };
+
 struct User {
     int id;
     string username;
@@ -26,6 +25,7 @@ struct User {
     string email;
     string address;
     string phone;
-    account accounts[3]; 
+    account accounts[3];
     transaction transactions[10];
+    int transactionCount = 0;
 };
