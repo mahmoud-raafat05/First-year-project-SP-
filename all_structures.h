@@ -27,5 +27,5 @@ struct User {
     string phone;
     account accounts[3];
     transaction transactions[10];
-    int transactionCount = 0;
+    int transactionCount = 1;
 };
