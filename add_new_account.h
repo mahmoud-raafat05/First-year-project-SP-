@@ -3,6 +3,7 @@
 #include <cstdlib> 
 #include <iostream>
 #include <cctype>
+#include <ctime>
 
 #include "all_structures.h"
 

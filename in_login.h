@@ -22,6 +22,7 @@ void main_menu(User users[], int userIdx)
         cout << "6-Exit \n";
 
         int main_choice;
+        int id;
         cout<<"your choice:";
         cin >> main_choice;
 
@@ -44,7 +45,7 @@ void main_menu(User users[], int userIdx)
             break;
         }
         case 3:
-        {
+        {            
             AddNewAccount(users, userIdx);
             break;
         }
